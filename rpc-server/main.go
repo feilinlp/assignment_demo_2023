@@ -6,6 +6,7 @@ import (
 	rpc "github.com/TikTokTechImmersion/assignment_demo_2023/rpc-server/kitex_gen/rpc/imservice"
 	"github.com/cloudwego/kitex/pkg/rpcinfo"
 	"github.com/cloudwego/kitex/server"
+	_ "github.com/go-sql-driver/mysql" // go get github.com/go-sql-driver/mysql
 	etcd "github.com/kitex-contrib/registry-etcd"
 )
 

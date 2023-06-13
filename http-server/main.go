@@ -5,6 +5,8 @@ import (
 	"log"
 	"time"
 
+	"fmt"
+
 	"github.com/TikTokTechImmersion/assignment_demo_2023/http-server/kitex_gen/rpc"
 	"github.com/TikTokTechImmersion/assignment_demo_2023/http-server/kitex_gen/rpc/imservice"
 	"github.com/TikTokTechImmersion/assignment_demo_2023/http-server/proto_gen/api"
@@ -48,6 +50,7 @@ func sendMessage(ctx context.Context, c *app.RequestContext) {
 		c.String(consts.StatusBadRequest, "Failed to parse request body: %v", err)
 		return
 	}
+	fmt.Println("main http")
 	resp, err := cli.Send(ctx, &rpc.SendRequest{
 		Message: &rpc.Message{
 			Chat:   req.Chat,

@@ -5,6 +5,9 @@ mkdir -p output/bin
 cp script/* output/
 chmod +x output/bootstrap.sh
 
+go get github.com/go-sql-driver/mysql
+go get github.com/avast/retry-go
+
 if [ "$IS_SYSTEM_TEST_ENV" != "1" ]; then
     go build -o output/bin/${RUN_NAME}
 else
